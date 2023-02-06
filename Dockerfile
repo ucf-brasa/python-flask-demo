@@ -3,6 +3,7 @@ FROM python:3.7
 WORKDIR /app
 
 RUN pip install pipenv
+RUN pip install flask
 RUN pip install gunicorn[gevent]
 
 COPY Pipfile ./
