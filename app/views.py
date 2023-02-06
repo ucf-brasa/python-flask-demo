@@ -2,7 +2,7 @@ from flask import render_template
 from flask_appbuilder.models.sqla.interface import SQLAInterface
 from flask_appbuilder import ModelView, ModelRestApi
 
-from . import appbuilder, db
+from . import appbuilder, db, app
 
 """
     Create your Model based REST API::
@@ -36,6 +36,9 @@ from . import appbuilder, db
     Application wide 404 error handler
 """
 
+@app("/")
+def hello_world():
+	return render_template("index.html")
 
 @appbuilder.app.errorhandler(404)
 def page_not_found(e):
