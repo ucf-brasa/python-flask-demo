@@ -34,7 +34,7 @@ from . import app
     Application wide 404 error handler
 """
 
-@app("/")
+@app.route("/")
 def hello_world():
 	return render_template("index.html")
 
